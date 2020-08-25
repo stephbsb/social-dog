@@ -1,7 +1,24 @@
 import React from 'react';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import Login from './components/login/Login';
+import { UserStorage } from './UserContext';
+import './App.css';
 function App() {
-  return <div>App React</div>;
+  return (
+    <BrowserRouter>
+      <UserStorage>
+        <Header />
+        <Routes>
+          <Route path='/login/*' element={<Login />} />
+          <Route path='/' exact element={<Home />} />
+        </Routes>
+        <Footer />
+      </UserStorage>
+    </BrowserRouter>
+  );
 }
 
 export default App;
