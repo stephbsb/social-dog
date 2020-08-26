@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -13,7 +13,10 @@ function App() {
         <Header />
         <Routes>
           <Route path='/login/*' element={<Login />} />
-          <Route path='/' exact element={<Home />} />
+          <Route path='/home' exact element={<Home />} />
+          <Route>
+            <Navigate to='/login' />
+          </Route>
         </Routes>
         <Footer />
       </UserStorage>
