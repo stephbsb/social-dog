@@ -2,32 +2,32 @@
 
 This is a social network for dogs where you can:
 
-- login, create new user, reset password
-- post photos of dogs
-- comment or like photos that are posted
+-> login, create new user, reset password </br>
+-> post photos of dogs </br>
+-> comment or like photos that are posted</br>
 
 # current features
 
-- login
-- create account
+-> login </br>
+-> create account </br>
 
 # depoyed version
 
-- soon
+-> soon </br>
 
 # details
 
-- the application fetches the data from an API
-- JWT for Authorization/Authentication stored on localStorage
-- regex for email and password validation
-- custom form hook
-- custom fetch hook
+-> the application fetches the data from an API </br>
+-> JWT for Authorization/Authentication stored on localStorage </br>
+-> regex for email and password validation </br>
+-> custom form hook </br>
+-> custom fetch hook </br>
 
 # technologies used in this project
 
-- ReactJS
-- CSS modules
-- React Router Dom - version 6
+-> ReactJS </br>
+-> CSS modules </br>
+-> React Router Dom - version 6 </br>
 
 # images
 
