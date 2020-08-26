@@ -11,9 +11,9 @@ This is a social network for dogs where you can:
 -> login </br>
 -> create account </br>
 
-# depoyed version
+# deployed version
 
--> soon </br>
+https://social-dog.herokuapp.com/
 
 # details
 
