@@ -1,13 +1,15 @@
 const API_URL = 'https://dogsapi.origamid.dev/json';
 
 export function USER_POST({ username, password, email }) {
-  this.endpoint = URL + '/api/user';
-  this.request = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  return {
+    url: API_URL + '/api/user',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password, email }),
     },
-    body: JSON.stringify({ username, password, email }),
   };
 }
 
