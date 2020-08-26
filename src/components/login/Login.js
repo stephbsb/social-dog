@@ -5,27 +5,30 @@ import LoginCreate from './LoginCreate';
 import LoginReset from './LoginReset';
 import LoginForgot from './LoginForgot';
 import UserContext from '../../UserContext';
+import styles from './Login.module.css';
 
 const Login = () => {
   const { login } = useContext(UserContext);
   if (login === true) return <Navigate to='/conta' />;
   return (
-    <div>
-      <Routes>
-        <Route path='/create'>
-          <LoginCreate />
-        </Route>
-        <Route path='/reset'>
-          <LoginReset />
-        </Route>
-        <Route path='/forgot'>
-          <LoginForgot />
-        </Route>
-        <Route path='/'>
-          <LoginForm />
-        </Route>
-      </Routes>
-    </div>
+    <section className={styles.login}>
+      <div className={styles.forms}>
+        <Routes>
+          <Route path='/create'>
+            <LoginCreate />
+          </Route>
+          <Route path='/resetpassword'>
+            <LoginReset />
+          </Route>
+          <Route path='/forgotpassword'>
+            <LoginForgot />
+          </Route>
+          <Route path='/'>
+            <LoginForm />
+          </Route>
+        </Routes>
+      </div>
+    </section>
   );
 };
 

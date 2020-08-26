@@ -5,6 +5,8 @@ import useForm from '../../hooks/useForm';
 import { UserContext } from '../../UserContext';
 import Error from '../helper/Error';
 import styles from './LoginForm.module.css';
+import stylesBtn from '../form/Button.module.css';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const { userLogin, error, loading } = useContext(UserContext);
@@ -32,6 +34,16 @@ const LoginForm = () => {
         )}
         <Error error={error} />
       </form>
+      <Link className={styles.forgot} to='/login/forgotpassword'>
+        Forgot your password?
+      </Link>
+
+      <div className={styles.signup}>
+        <h2 className={styles.subtitle}>Create an account</h2>
+        <Link className={stylesBtn.button} to='/login/create'>
+          Sign Up
+        </Link>
+      </div>
     </section>
   );
 };
