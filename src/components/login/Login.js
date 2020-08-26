@@ -1,11 +1,14 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import LoginCreate from './LoginCreate';
 import LoginReset from './LoginReset';
 import LoginForgot from './LoginForgot';
+import UserContext from '../../UserContext';
 
 const Login = () => {
+  const { login } = useContext(UserContext);
+  if (login === true) return <Navigate to='/conta' />;
   return (
     <div>
       <Routes>

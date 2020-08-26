@@ -1,61 +1,36 @@
-import React, { useEffect } from 'react';
-import { TOKEN_POST, USER_GET } from '../../api';
+import React, { useContext } from 'react';
 import Input from '../form/Input';
 import Button from '../form/Button';
 import useForm from '../../hooks/useForm';
+import { UserContext } from '../../UserContext';
+import Error from '../helper/Error';
+import styles from './LoginForm.module.css';
 
 const LoginForm = () => {
+  const { userLogin, error, loading } = useContext(UserContext);
   const username = useForm();
   const password = useForm('password');
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      getUser(token);
-    }
-  }, []);
-
-  function getUser(token) {
-    const { url, options } = USER_GET(token);
-    console.log(options);
-    fetch(url, options)
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => console.log(json));
-  }
 
   function handleSubmit(event) {
     event.preventDefault();
 
     if (username.validate() && password.validate()) {
-      const { url, options } = TOKEN_POST({
-        username: username.value,
-        password: password.value,
-      });
-
-      fetch(url, options)
-        .then((response) => {
-          return response.json();
-        })
-        .then((json) => {
-          if (json.token) {
-            localStorage.setItem('token', json.token);
-            username.clearValues();
-            password.clearValues();
-            getUser(json.token);
-          }
-        });
+      userLogin(username.value, password.value);
     }
   }
 
   return (
-    <section>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <section className='animeLeft'>
+      <h1 className='title'>Login</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <Input label='User' name='username' type='text' {...username} />
         <Input label='Password' name='password' type='password' {...password} />
-        <Button>Log In</Button>
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Log In</Button>
+        )}
+        <Error error={error} />
       </form>
     </section>
   );
