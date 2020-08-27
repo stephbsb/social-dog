@@ -19,17 +19,10 @@ const Header = () => {
             <Link to='/conta' className={styles.login}>
               {data.email}
             </Link>
-            <Button
-              onClick={() => {
-                userLogout();
-              }}
-            >
-              Log out
-            </Button>
           </>
         ) : (
           <Link to='/login' className={styles.login}>
-            Login / Criar
+            Login / Sign Up
           </Link>
         )}
       </nav>
