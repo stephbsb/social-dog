@@ -6,6 +6,8 @@ import Home from './components/Home';
 import Login from './components/login/Login';
 import { UserStorage } from './UserContext';
 import './App.css';
+import User from './components/user/User';
+import ProtectedRoute from './components/helper/ProtectedRoute';
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/login/*' element={<Login />} />
           <Route path='/home' exact element={<Home />} />
+          <ProtectedRoute path='/conta/*' element={<User />} />
           <Route>
             <Navigate to='/login' />
           </Route>
