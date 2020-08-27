@@ -36,9 +36,9 @@ const LoginCreate = () => {
         <Input label='Email' type='text' name='email' {...email} />
         <Input label='Password' type='text' name='password' {...password} />
         {loading ? (
-          <Button disabled>Signing you up!</Button>
+          <Button disabled>Signing you up...</Button>
         ) : (
-          <Button>Sign up...</Button>
+          <Button>Sign up!</Button>
         )}
         <Error error={error} />
       </form>

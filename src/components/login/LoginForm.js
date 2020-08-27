@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const LoginForm = () => {
   const { userLogin, error, loading } = useContext(UserContext);
   const username = useForm();
-  const password = useForm('password');
+  const password = useForm();
 
   function handleSubmit(event) {
     event.preventDefault();
