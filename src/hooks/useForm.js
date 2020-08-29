@@ -36,16 +36,11 @@ const useForm = (type) => {
     validate(target.value);
   }
 
-  function clearValues() {
-    setValue('');
-    setError(null);
-  }
-
   return {
     value,
     onChange,
     error,
-    clearValues,
+
     validate: () => validate(value),
     onBlur: () => validate(value),
   };
