@@ -17,9 +17,6 @@ function App() {
           <Route path='/login/*' element={<Login />} />
           <Route path='/home' exact element={<Home />} />
           <ProtectedRoute path='/conta/*' element={<User />} />
-          <Route>
-            <Navigate to='/login' />
-          </Route>
         </Routes>
         <Footer />
       </UserStorage>
