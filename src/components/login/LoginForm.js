@@ -27,6 +27,7 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit} className={styles.form}>
         <Input label='User' name='username' type='text' {...username} />
         <Input label='Password' name='password' type='password' {...password} />
+        <h6>For testing: username: dog, password: dog</h6>
         {loading ? (
           <Button disabled>Carregando...</Button>
         ) : (
