@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST } from './api';
 import { useNavigate } from 'react-router-dom';
 
@@ -26,14 +26,14 @@ export const UserStorage = ({ children }) => {
       });
   }
 
-  function userLogout() {
+  const userLogout = useCallback(() => {
     setData(null);
     setError(null);
     setLoading(false);
     setLogin(false);
     window.localStorage.removeItem('token');
     navigate('/login');
-  }
+  }, [navigate]);
 
   function userLogin(username, password) {
     setError(null);
@@ -88,7 +88,7 @@ export const UserStorage = ({ children }) => {
       }
     }
     autoLogin();
-  }, []);
+  }, [userLogout]);
 
   return (
     <UserContext.Provider
