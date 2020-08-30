@@ -50,21 +50,20 @@ export function TOKEN_VALIDATE_POST(token) {
   };
 }
 
-/* 
-export const PHOTO_POST = {
-  endpoint: '/api/photo',
-  method: 'POST',
-  headers: {
-    Authorization: 'Bearer ' + token,
-  },
-  body: {
-    img: 'FORM_DATA',
-    nome: '',
-    peso: '',
-    idade: '',
-  },
+export const PHOTO_POST = (token, formData) => {
+  return {
+    url: API_URL + '/api/photo',
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+      body: formData,
+    },
+  };
 };
 
+/* 
 // query: ?_total=1&_page=1&_user=6
 export const PHOTO_GET = {
   endpoint: {

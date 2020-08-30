@@ -11,6 +11,10 @@ const types = {
     regex: /.{8,}/,
     message: 'Password must be at least 8 characters.',
   },
+  number: {
+    regex: /^\d+$/,
+    message: 'Only numbers are allowed.',
+  },
 };
 
 const useForm = (type) => {
