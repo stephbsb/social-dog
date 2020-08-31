@@ -63,17 +63,28 @@ export const PHOTO_POST = (token, formData) => {
   };
 };
 
-/* 
 // query: ?_total=1&_page=1&_user=6
-export const PHOTO_GET = {
-  endpoint: {
-    photos: '/api/photo',
-    photos_query: '/api/photo/?_total=9&_page=1&_user=0',
-    photo: '/api/photo/:id',
-  },
-  method: 'GET',
+export const PHOTOS_GET = ({ page, total, user }) => {
+  return {
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  };
 };
 
+export const PHOTO_GET = (id) => {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  };
+};
+
+/* 
 export const PHOTO_DELETE = {
   endpoint: '/api/photo/:id',
   method: 'DELETE',
