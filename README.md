@@ -10,6 +10,8 @@ This is a social network for dogs where you can:
 
 -> login </br>
 -> create account </br>
+-> upload new photo </br>
+-> home page with a few images from users </br>
 
 # deployed version
 
