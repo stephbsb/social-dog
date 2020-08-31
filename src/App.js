@@ -15,7 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/login/*' element={<Login />} />
-          <Route path='/home' exact element={<Home />} />
+          <Route path='/' element={<Home />} />
           <ProtectedRoute path='/conta/*' element={<User />} />
         </Routes>
         <Footer />
